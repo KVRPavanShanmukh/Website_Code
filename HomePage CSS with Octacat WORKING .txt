@@ -1,0 +1,714 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f2f2f2;
+}
+
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    outline-style: outset; 
+    align-items: center;
+    background-color: #1E2761;
+    padding: 15px 30px;
+    color: white;
+    border-bottom: 3px solid yellow;
+    box-shadow: 0 4px 8px rgba(55, 5, 0, 0.5);
+    flex-wrap: wrap;
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-logo {
+    height: 70px;
+    width: auto;
+    vertical-align: middle;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.search-bar input {
+    padding: 8px 12px;
+    border: none;
+    width: 180px;
+    border-radius: 50px;
+    outline: none;
+}
+
+.search-bar button {
+    padding: 8px 15px;
+    margin-left: 8px;
+    background-color: #FF9900;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.search-bar button:hover {
+    background-color: #e68a00;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+    color: #FFD700;
+}
+
+.nav-links a:active {
+    color: yellow;
+}
+
+.theory,
+.theory1 {
+    background-color: #408EC6;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    color: black;
+    width: 90%;
+    max-width: 900px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.list {
+    text-align: left;
+    background: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    color: black;
+    font-size: 16px;
+}
+
+.link-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    list-style: none;
+    padding: 20px;
+    border: 5px solid #7A2048;
+    margin: 20px;
+    background-color: #408EC6;
+    gap: 20px;
+}
+
+.btn {
+    color: white;
+    margin-bottom: 40px;
+    padding: 15px 40px;
+    background: transparent;
+    position: relative;
+    z-index: 0;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+.btn::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+.btn::before {
+    content: "";
+    background: linear-gradient(
+        45deg,
+        #ff0000, #ff7300, #fffb00, #48ff00,
+        #00ffd5, #002bff, #ff00cb, #ff0000
+    );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 600%;
+    z-index: -1;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    filter: blur(8px);
+    animation: glowing 10s linear infinite;
+    opacity: 0;
+    border-radius: 10px;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.btn:hover::before {
+    opacity: 1;
+}
+
+.btn:active::after {
+    background: transparent;
+}
+
+.btn:active {
+    color: #000;
+    font-weight: bold;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+a:link, a:visited {
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    display: inline-block;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    color: #7A2048;
+}
+
+.head {
+    text-align: center;
+    font-size: 3rem;
+    color: #408EC6;
+    padding: 50px 20px;
+    background-color: yellow;
+    font-family: 'Times New Roman', serif;
+    margin: 0;
+}
+
+.content {
+    text-decoration-thickness: 2px;
+    text-decoration-style:wavy ;
+    text-decoration-line: overline underline ;
+    text-transform: capitalize;
+    text-shadow: #00ffd5 2px 2px 5px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+    }
+
+    .navbar .logo {
+        margin-bottom: 10px;
+    }
+
+    .navbar-logo {
+        height: 60px;
+        width: auto;
+    }
+
+    .search-bar {
+        width: 100%;
+        margin-bottom: 10px;
+        justify-content: flex-start;
+    }
+
+    .nav-links {
+        flex-direction: row;
+        width: 100%;
+        gap: 10px;
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .nav-links li {
+        width: auto;
+        margin-right: 10px;
+    }
+
+    .nav-links li:last-child {
+        margin-right: 0;
+    }
+
+    .nav-links li a {
+        display: inline-block;
+        padding: 10px 0;
+    }
+}
+
+@keyframes colorChange {
+    0% { color: red; }
+    25% { color: yellow; }
+    50% { color: green; }
+    75% { color:#408EC6; }
+    100% { color: red; }
+}
+
+.yt-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    background-color: #000;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.youtube-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+.close-iframe-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s ease;
+}
+
+.close-iframe-btn:hover {
+    background-color: #fff;
+    color: #000;
+}
+.youtube-button {
+    background-color: #ff0000;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    align-self: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.youtube-button:hover {
+    background-color: #cc0000;
+}
+
+@media (max-width: 768px) {
+   .yt-container {
+        max-width: 100%;
+        margin: 20px 10px;
+    }
+}
+
+.content-buttons-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 30px;
+    padding: 10px;
+}
+
+.content-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+
+
+/* Existing styles (don't remove) */
+
+/* Genie Popup Styles */
+.genie-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.genie-popup-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 400px; /* Adjust width as needed */
+    max-width: 90%; /* Ensure it's responsive */
+    height: 600px; /* Fixed height for the popup */
+    display: flex;
+    flex-direction: column; /* Arrange children vertically */
+    position: relative; /* For absolute positioning of close button */
+}
+
+.genie-popup-close-btn {
+    position: absolute; /* Position relative to .genie-popup-content */
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333;
+    z-index: 10; /* Ensure it's above other content */
+}
+
+.genie-character-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 15px auto; /* Center image horizontally and add bottom margin */
+    display: block; /* Ensure margin auto works */
+    z-index: 5; /* Ensure it's above chat but below close button */
+}
+
+.chat-display {
+    flex-grow: 1; /* Allows it to take up available space */
+    overflow-y: auto; /* Makes the chat history scrollable */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px; /* Space between chat and input */
+    background-color: #f9f9f9;
+    display: flex; /* Use flexbox for messages */
+    flex-direction: column; /* Stack messages vertically */
+    position: relative; /* For the fade effect */
+}
+
+.message {
+    padding: 8px 12px;
+    margin-bottom: 8px;
+    border-radius: 15px;
+    max-width: 80%;
+    word-wrap: break-word;
+}
+
+.user-message {
+    align-self: flex-end;
+    background-color: #007bff;
+    color: white;
+}
+
+.genie-message {
+    align-self: flex-start;
+    background-color: #e2e6ea;
+    color: #333;
+}
+
+.loading-indicator {
+    align-self: center;
+    margin-top: 10px;
+    font-style: italic;
+    color: #666;
+}
+
+.chat-input-container {
+    display: flex;
+    gap: 10px;
+    padding-top: 10px; /* Space above input */
+    border-top: 1px solid #eee; /* Separator line */
+}
+
+.chat-input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.chat-send-btn {
+    padding: 10px 15px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.chat-send-btn:disabled {
+    background-color: #90ee90;
+    cursor: not-allowed;
+}
+
+/* Fade effect for chat display (optional but good for appearance) */
+.chat-display::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 30px; /* Height of the fade effect at the top */
+    background: linear-gradient(to bottom, #f9f9f9, rgba(249, 249, 249, 0));
+    pointer-events: none; /* Allows clicks to pass through */
+    z-index: 2; /* Make sure it's above messages but below character/button if needed */
+}
+
+.chat-display::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 30px; /* Height of the fade effect at the bottom */
+    background: linear-gradient(to top, #f9f9f9, rgba(249, 249, 249, 0));
+    pointer-events: none;
+    z-index: 2;
+}
+.octacat-chat-container {
+    position: fixed; /* Fixed position relative to the viewport */
+    bottom: 20px; /* Adjust as needed, e.g., 20px from bottom */
+    right: 20px; /* Adjust as needed, e.g., 20px from right */
+    width: 350px; /* Width of the chat box */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000; /* Ensure it's on top of other content */
+    max-height: 450px; /* Max height for the entire container */
+    overflow: hidden; /* Hide any overflow to keep it compact */
+}
+
+.octacat-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #555;
+    z-index: 10;
+}
+
+.octacat-image-fixed {
+    width: 80px; /* Smaller image size */
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 10px auto; /* Center and add bottom margin */
+    display: block;
+    z-index: 5;
+}
+
+.chat-display-fixed {
+    flex-grow: 1; /* Allows it to take available space */
+    overflow-y: auto; /* Still keeps it scrollable internally if needed, but not the main effect desired */
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    background-color: #fcfcfc;
+    display: flex;
+    flex-direction: column;
+    /* No 'before' or 'after' pseudo-elements for fade if chat history is always reset */
+    /* This makes sure chat box content aligns to bottom if needed */
+    justify-content: flex-end;
+}
+
+.message {
+    padding: 8px 12px;
+    margin-bottom: 8px;
+    border-radius: 15px;
+    max-width: 85%; /* Make messages a bit narrower */
+    word-wrap: break-word;
+    font-size: 0.95rem; /* Slightly smaller font for chat */
+    line-height: 1.4;
+}
+
+.user-message {
+    align-self: flex-end;
+    background-color: #007bff;
+    color: white;
+    margin-left: auto; /* Pushes user messages to the right */
+}
+
+.genie-message {
+    align-self: flex-start;
+    background-color: #e2e6ea;
+    color: #333;
+    margin-right: auto; /* Pushes genie messages to the left */
+}
+
+.loading-indicator {
+    align-self: center;
+    margin-top: 5px;
+    font-style: italic;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.chat-input-container-fixed {
+    display: flex;
+    gap: 8px;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+}
+
+.chat-input-fixed {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.chat-send-btn-fixed {
+    padding: 10px 15px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s ease;
+}
+
+.chat-send-btn-fixed:hover {
+    background-color: #218838;
+}
+
+.chat-send-btn-fixed:disabled {
+    background-color: #90ee90;
+    cursor: not-allowed;
+}
+
+
+.icon-bar {
+    width: 90px;
+    background-color: #555;
+}
+
+.icon-bar a {
+    display: block;
+    text-align: center;
+    padding: 16px;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 36px;
+}
+
+.icon-bar a:hover {
+    background-color: #000;
+}
+
+.active {
+    background-color: #04AA6D;
+}
+
+h2{
+    background-color: white;
+    padding: 10px;
+    border-radius: 50px;
+    color: red;
+    animation: colorChange 5s infinite;
+    text-align: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Scrollable Image Gallery Styles */
+.image-gallery-container {
+    display: flex; /* Use flexbox for horizontal layout */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    scroll-snap-type: x mandatory; /* Optional: snap to images when scrolling */
+    gap: 20px; /* Space between images */
+    padding: 20px; /* Padding inside the scrollable container */
+    max-width: 100%; /* Ensure it doesn't overflow parent */
+    margin: 20px auto; /* Center the container */
+    background-color: rgba(255, 255, 255, 0.8); /* Slight background for the scroll area */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Hide scrollbar for a cleaner look (optional, but common for image galleries) */
+.image-gallery-container::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Opera */
+}
+.image-gallery-container {
+    -ms-overflow-style: none;  /* For IE and Edge */
+    scrollbar-width: none;  /* For Firefox */
+}
+
+
+.modalImage, .gallery-image {
+    flex-shrink: 0; /* Prevent images from shrinking */
+    width: 300px; /* Fixed width for each image in the scrollable gallery */
+    height: 200px; /* Fixed height for consistent look */
+    object-fit: cover; /* Crop image to fit without distortion */
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+    scroll-snap-align: start; /* Optional: align images to the start of the scroll area */
+}
+
+.modalImage:hover, .gallery-image:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}

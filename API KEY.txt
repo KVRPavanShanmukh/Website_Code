@@ -1,0 +1,25 @@
+API KEY:
+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
+
+
+npm install openai
+import OpenAI from "openai";
+
+const openai = new OpenAI({
+  apiKey: "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",
+});
+
+const completion = openai.chat.completions.create({
+  model: "gpt-4o-mini",
+  store: true,
+  messages: [
+    {"role": "user", "content": "write a haiku about ai"},
+  ],
+});
+
+completion.then((result) => console.log(result.choices[0].message));
+
+
+
+Organization ID:
+org-TfFRvASvWYyy2CSpnoDL7AKA
